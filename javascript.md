@@ -1,5 +1,4 @@
 # [Javascript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction)
-
 - [grammar and types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
 - [control flow and error handling](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
 - [Loops and iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
@@ -213,6 +212,86 @@
 - [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - [trailing commas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
-Glossary
+# JIT COMPILATION
+- parsing
+- abstract syntax tree
+- compilation
+- execution
+- happens in the call stack
+- while app is running loop through 
+  - optimization --> compilation --> execution 
+- engine and runtime
+- heap and call stack 
+- web apis are apart of the runtime
+- callback queue
+- eventhandlers aka callback functions
+- eventloop
+-  put callback function from event queue and puts it on the stack
+- event handling
+  - put callback function into callback queue
+  - is call stack empty?
+    - add cb function to eventloop
+- chrome vs v8 runtime
+  - chrome runtime is the same but instead of web apis you work with c++ bindings & thread pool 
 
+# how is javascript code executed
+- code compilation occurs
+  - one global execution context is created for top level code
+    - create execution context for each function call
+
+- global execution context
+  - the box around all of the code. Think root of the project but for code 
+  - first executes top level code followed by functions and waiting for callbacks
+
+- top level code
+  - code not inside any function
+
+- execution context
+  - one per function call
+  - stores the following information for function execution
+    - variable environment
+    - scope chain
+    - this keyword
+      - only for non arrow functions
+
+- variable environment
+  - stores variables and function declarations
+  - function declaration
+  - arguments object containing all argmuments passed to the function
+    - arrow functions do not have argument objects
+
+- scope chain
+  - references to variables outside of the functions
+
+# [js engine components]
+- callstack and memory heap make up the engine
+
+# scoping
+- scoping
+  - how our program's variables are organized and accessed
+- lexical scoping
+  - scoping is controlled by placement of functions and blocks in the code
+- scope
+  - space or environment in which a certain variable is declared 
+  - there are three scopes
+    - global
+      - top level code
+      - accessible everywhere  
+    - function 
+      - aka local scope
+      - variables are only inside function NOT outside
+      - ReferenceError if you try to access it outside of function
+      - `var` is function scoped 
+    - block (ES6)
+      - everything between curly braces
+      - only apply to variables declared with `let` and `const`
+      - dont user `var` because variable can be accessible by surrounding function scope
+- variable lookup in scope chain
+  -  
+- scope of a variable
+  - region of our code where a certain variable can be accessed
+
+# [hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+
+Glossary
 - [Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
