@@ -293,5 +293,7 @@
 
 # [hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
 
+- [deepcopy](https://www.geeksforgeeks.org/lodash-_-clonedeep-method/)
+- 
 Glossary
 - [Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
